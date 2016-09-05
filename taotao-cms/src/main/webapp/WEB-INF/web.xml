@@ -5,7 +5,7 @@
          id="WebApp_ID" version="2.5">
     <display-name>taotao-cms</display-name>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
     <!-- 加载spring容器 -->
     <context-param>
@@ -47,4 +47,10 @@
         <!-- 配置“/”拦截所有请求，jsp除外 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>taotao-cms</servlet-name>
+        <!-- 配置“/”拦截所有请求，jsp除外 -->
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+   
 </web-app>

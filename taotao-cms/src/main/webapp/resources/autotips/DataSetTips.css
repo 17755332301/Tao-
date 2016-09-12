@@ -1,0 +1,106 @@
+﻿@charset "utf-8";
+.autoDataTarget{
+	border:1px solid #FF9933;width:300px;height:23px;padding:0 5px;
+   	cursor:pointer;background-image: url('../../resources/autotips/n049.gif'); 
+   	background-position:right; background-repeat: no-repeat;}
+#autoDataTips{
+	-webkit-box-shadow:3px 3px 3px rgba(0, 0, 0, .5);  
+	-moz-box-shadow:3px 3px 3px rgba(0, 0, 0, .5);  
+	box-shadow:3px 3px 3px rgba(0, 0, 0, .5);}
+#autoDataTips {
+	width: 190px;
+	border: 1px solid #e6e6e6;
+	background: #FFF;
+	padding: 4px;
+	margin: 0px;
+	text-align: left;
+	font-size: 12px; 
+	font-family: Arial, Simsun;	
+	position: absolute; 
+	z-index: 99999;  
+} 
+#autoDataTipsMsg {
+	display: block;
+	line-height: 23px;
+	padding:0 0 0 5px;
+	color: #444444;
+	background:#efefef;
+	font-family:Simsun;
+	width:185px;
+} 
+#autoDataTipsList {
+	margin: 5px 0 0 0;
+	padding: 0px;
+} 
+#autoDataTipsList a {
+	padding: 1px 5px 0px 5px;
+	text-align: left;
+	cursor: pointer;
+	line-height: 20px;
+	color: #444444;
+	display:block;
+	text-decoration:none;
+	height:20px;
+} 
+#autoDataTipsList a.selected {
+	background:url('../../resources/autotips/titlebg3.gif');
+	color:#FFF;
+} 
+#autoDataTipsList a span {
+	right:5px;
+	margin-right:4px;
+	position:absolute;
+} 
+#autoDataTipsList a:hover span {
+	color:#FFF;
+}
+#autoDataTipsList {
+	padding:0;
+	margin:0;
+	line-height:25px;
+	text-align:center;
+}
+#autoDataTipsList a {
+	color:#444444;
+	font-family: Arial, Simsun, sans-serif;
+	text-decoration:underline;
+	padding:0px 4px 0px 4px;
+	margin:0;
+	font-size:12px;
+}
+#autoDataTipsList a.autoTipsCurrentPage {
+	color: black;
+	text-decoration: none;
+	cursor:default;
+}
+/**浮动错误提示框**/
+#warning {	
+	z-index: 999;
+	position:absolute;
+}
+#warning .side{
+	float:left;
+	width:18px;
+	height:33px;
+}
+#warning .center{
+	float:left;
+	width:auto;
+	height:33px;
+	background-image:url('../../resources/autotips/n052.gif');
+	line-height:33px;
+	font-size:12px;
+}
+.button2 
+{
+	width:70px; 
+	BORDER-RIGHT: #fff 1px solid;
+	BORDER-TOP: #fff 1px solid; 
+	FONT-SIZE: 13px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#669900);
+	BORDER-LEFT: #fff 1px solid; 
+	CURSOR: hand; COLOR: black;
+	BORDER-BOTTOM: #fff 1px solid ;
+	height:26px;
+}
+.autoItemPro{ background-color:#f9f9f9;}

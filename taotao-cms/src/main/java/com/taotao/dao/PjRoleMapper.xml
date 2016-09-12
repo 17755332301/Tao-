@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.dao.PjRoleMapper">
+    <!--查询所有的角色-->
+    <select id="selectAllRole" resultType="com.taotao.model.PjRole">
+    select
+    *
+    from pj_role
+    </select>
+
+    <!-- 通过id查询角色的名称 -->
+    <select id="selectRoleById" resultType="com.taotao.model.PjRole" parameterType="java.lang.Integer">
+    select
+    *
+    from pj_role
+    where id = #{id}
+    </select>
+
+    <!--添加角色-->
+    <insert id="insertRole" parameterType="com.taotao.model.PjRole">
+        insert into pj_role
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="role_name != null">
+                role_name,
+            </if>
+            <if test="remark != null" >
+                remark,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id},
+            </if>
+            <if test="role_name != null" >
+                #{role_name},
+            </if>
+            <if test="remark != null" >
+                #{remark},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>验证码</title>
+<style type="text/css">
+<!--
+body { margin:0; padding:0; background-color:transparent; font-size:12px; height:18px; overflow:hidden; }
+a { color:#0033CC; height:18px; line-height:18px; } 
+#imtable_162100_bg { width:75px; height:18px; float:left; /* vertical-align:middle; display:inline-block !important; display:inline; zoom:1;*/ cursor:pointer; overflow:hidden; }
+.imtable_162100 { float:left; display:inline; /*display:inline-block !important; display:inline; zoom:1;*/ width:12px; height:18px; font-size:1px; line-height:1px; overflow:hidden; }
+.imtable_162100_in { float:left; width:2px; height:2px; font-size:1px; padding:0; overflow:hidden; }
+-->
+</style>
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+<!--
+/*
+* 程序名称：数字div（非图片）验证码
+* 作者：http://www.162100.com
+* 版本：2.0版（2013.06.15发布）
+* 邮箱：162100.com@163.com
+* 下载：http://download.162100.com
+* 声明：仅供代码爱好者学习交流，禁用于商业目的，请保留此版权信息
+*/
+//数字验证码种子（当然，可扩展字母种子）
+var num0=new Array([0,1,1,0],[1,0,0,1],[1,0,0,1],[1,0,0,1],[1,0,0,1],[1,0,0,1],[0,1,1,0]);
+var num1=new Array([0,0,1,0],[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,1,0],[0,0,1,0],[0,0,1,0]);
+var num2=new Array([0,1,1,0],[1,0,0,1],[0,0,0,1],[0,0,1,0],[0,1,0,0],[1,0,0,0],[1,1,1,1]);
+var num3=new Array([0,1,1,0],[1,0,0,1],[0,0,0,1],[0,0,1,0],[0,0,0,1],[1,0,0,1],[0,1,1,0]);
+var num4=new Array([0,0,1,0],[0,1,1,0],[1,0,1,0],[1,0,1,0],[1,1,1,1],[0,0,1,0],[0,0,1,0]);
+var num5=new Array([1,1,1,1],[1,0,0,0],[1,0,0,0],[1,1,1,0],[0,0,0,1],[0,0,0,1],[1,1,1,0]);
+var num6=new Array([0,1,1,1],[1,0,0,0],[1,0,0,0],[1,1,1,0],[1,0,0,1],[1,0,0,1],[0,1,1,0]);
+var num7=new Array([1,1,1,1],[1,0,0,1],[0,0,0,1],[0,0,1,0],[0,0,1,0],[0,0,1,0],[0,0,1,0]);
+var num8=new Array([0,1,1,0],[1,0,0,1],[1,0,0,1],[0,1,1,0],[1,0,0,1],[1,0,0,1],[0,1,1,0]);
+var num9=new Array([0,1,1,0],[1,0,0,1],[1,0,0,1],[0,1,1,1],[0,0,0,1],[0,0,0,1],[0,1,1,0]);
+
+/*
+//当前色color，做字
+var color=getColor();
+//以下取反相色colorR，做底
+var colorR=(0xFFFFFF-parseInt(color.slice(-6),16)).toString(16);
+colorR="#"+("000000"+colorR).slice(-6).toUpperCase();
+
+function getColor(){
+  var color='ABCDEF0123456789';
+  var c='#';
+  for(var i=0;i<6;i++){
+    c+=color.substr(Math.floor(Math.random()*16),1);
+  }
+  return c;
+}
+*/
+
+//前景色
+var color0='AB0123456789';
+//背景色
+var color1='CDEF';
+
+//取色函数
+function getColor(str){
+  var len=str.length;
+  var c='#';
+  for(var i=0;i<6;i++){
+    c+=str.substr(Math.floor(Math.random()*len),1);
+  }
+  return c;
+}
+
+//单独数字阵营函数
+function get_chk_numbercode(num_arr){
+  var cf=(Math.floor(Math.random()*10))%2;
+  var cb=cf==0?1:0;
+  var text='<div class="imtable_162100">';
+  for(var i=-1;i<8;i++){
+    for(var j=-1;j<5;j++){
+      if(i==-1 || i==7 || j==-1 || j==4){
+        text+='<div style="background-color:'+getColor(eval("color"+cb))+'" class="imtable_162100_in">&nbsp;</div>';
+      }else{
+        text+='<div style="background-color:'+(num_arr[i][j] == 1 ? getColor(eval("color"+cf)) : getColor(eval("color"+cb)))+'" class="imtable_162100_in">&nbsp;</div>';
+      }
+    }
+  }
+  text+='</div>';
+  return text;
+}
+
+//生成全部数字阵营函数
+function born162100Imcode(){
+  var numC=String(Math.floor(Math.random()*999999));
+  var numA=numC.split('');
+  var code='';
+  for(var i=0;i<numA.length;i++){
+    code+=get_chk_numbercode(eval("num"+numA[i]));
+  }
+  //生成cookie
+  document.cookie="imcode162100="+numC+"; path="+"/"+";";
+  return code;
+}
+
+//刷新验证码函数
+function refresh162100Imcode(){
+  document.getElementById('imtable_162100_bg').innerHTML=born162100Imcode();
+}
+
+//输出
+document.writeln('<div id="imtable_162100_bg" onmousedown="refresh162100Imcode()" title="点击更换验证码">'+born162100Imcode()+'</div>');
+//document.writeln('<a href="#" onclick="refresh162100Imcode();return false;" title="点击更换验证码">换一张</a>');
+-->
+</script>
+
+
+</body>
+</html>

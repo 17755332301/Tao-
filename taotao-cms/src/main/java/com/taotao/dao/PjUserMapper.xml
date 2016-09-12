@@ -1,11 +1,138 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.taotao.dao.PjUserMapper" >
-  <select id="selectUserByInfo" resultType="com.taotao.model.PjUser" parameterType="com.taotao.model.PjUser" >
+<mapper namespace="com.taotao.dao.PjUserMapper">
+    <!--校验登录的账户和密码-->
+    <select id="selectUserByInfo" resultType="com.taotao.model.PjUser" parameterType="com.taotao.model.PjUser">
     select 
     *
     from pj_user
     where user_name =#{user_name} and user_password=#{user_password}
   </select>
+
+    <!--查询所有的用户-->
+    <select id="selectAllUser" resultType="com.taotao.model.PjUser">
+    select
+    *
+    from pj_user
+  </select>
+    <!--通过用户的id查询用户-->
+    <select id="selectUserById" resultType="com.taotao.model.PjUser" parameterType="java.lang.Integer">
+        select
+        *
+        from pj_user
+        where id = #{id}
+    </select>
+
+    <!--查询数量各个角色的数量  -->
+    <select id="userCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+    select
+    count(*)
+    from pj_user
+    where roleId =#{roleId}
+  </select>
+
+    <!--查询最大的id-->
+    <select id="selectMaxId" resultType="java.lang.Integer">
+        select
+        max(id)
+        from pj_user
+    </select>
+
+    <!--插入用户-->
+    <insert id="insertUser" parameterType="com.taotao.model.PjUser">
+        insert into pj_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="user_name != null">
+                user_name,
+            </if>
+            <if test="user_password != null">
+                user_password,
+            </if>
+            <if test="user_phone != null">
+                user_phone,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="enter_time != null">
+                enter_time,
+            </if>
+            <if test="update_time != null">
+                update_time,
+            </if>
+            <if test="is_use != null">
+                is_use,
+            </if>
+            <if test="roleId != null">
+                roleId
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="user_name != null">
+                #{user_name},
+            </if>
+            <if test="user_password != null">
+                #{user_password},
+            </if>
+            <if test="user_phone != null">
+                #{user_phone},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="enter_time != null">
+                #{enter_time},
+            </if>
+            <if test="update_time != null">
+                #{update_time},
+            </if>
+            <if test="is_use != null">
+                #{is_use},
+            </if>
+            <if test="roleId != null">
+                #{roleId}
+            </if>
+        </trim>
+    </insert>
+    <!--更新-->
+    <update id="updateUser" parameterType="com.taotao.model.PjUser">
+        update pj_user
+        <set>
+            <if test="user_name != null">
+                user_name = #{user_name},
+            </if>
+            <if test="user_password != null">
+                user_password = #{user_password},
+            </if>
+            <if test="user_phone != null">
+                user_phone = #{user_phone},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="enter_time != null">
+                enter_time = #{enter_time},
+            </if>
+            <if test="update_time != null">
+                update_time = #{update_time},
+            </if>
+            <if test="enter_time != null">
+                enter_time = #{enter_time},
+            </if>
+            <if test="is_use != null">
+                is_use = #{is_use},
+            </if>
+            <if test="roleId != null">
+                roleId = #{roleId}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
 </mapper>

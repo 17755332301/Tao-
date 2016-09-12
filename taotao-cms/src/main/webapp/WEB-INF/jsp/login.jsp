@@ -40,7 +40,7 @@ pageEncoding="UTF-8"%>
 	<div class="center">
 	<h1>
 									<i class="icon-leaf green"></i>
-									<span class="orange">思美软件</span>
+									<span class="orange"></span>
 									<span class="white">后台管理系统</span>
 								</h1>
 								<h4 class="white">Background Management System</h4>
@@ -112,7 +112,7 @@ pageEncoding="UTF-8"%>
 							</div><!-- /position-relative -->
 						</div>
                         </div>
-                        <div class="loginbm">版权所有  2016  <a href="">芜湖思美软件系统有限公司</a> </div><strong></strong>
+                        <div class="loginbm">版权所有  2016  <a href="">芜湖淘瑞软件系统有限公司</a> </div><strong></strong>
 </body>
 </html>
 <script>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.dao.PjModuleMapper">
+    <!--通过用户的id查询他所具有的权限-->
+    <select id="selectAllModuleById" resultType="com.taotao.model.PjModule" parameterType="java.lang.Integer">
+	  SELECT m.* FROM pj_module m
+	      INNER JOIN pj_role_module rm ON m.id = rm.module_id
+	      INNER JOIN pj_role r ON r.id =rm.role_id
+	      INNER JOIN pj_user_role ur ON ur.role_id =r.id
+	      INNER JOIN pj_user u ON u.id =ur.user_id
+	      WHERE u.id=#{id}
+	</select>
+
+	<!--查询所有的主菜单-->
+	<select id="selectAllMainModule" resultType="com.taotao.model.PjModule">
+		SELECT *
+		from pj_module
+		where pid = 0
+	</select>
+
+    <!--查询所有的模块-->
+    <select id="selectModuleList" resultType="com.taotao.model.PjModule">
+		SELECT *
+		from pj_module
+	</select>
+	<!--通过角色的id查询角色的功能模块-->
+	<select id="selectAllRoleModuleByRoleId" parameterType="java.lang.Integer" resultType="com.taotao.model.PjModule">
+		SELECT t5.id,t5.mod_name
+		FROM pj_role t1,
+		pj_role_module t4,
+		pj_module t5
+		WHERE t4.role_id=t1.id
+		AND t4.module_id=t5.id
+		AND t1.id=#{value}
+	</select>
+
+	<!--添加权限-->
+	<insert id="insertModule" parameterType="com.taotao.model.PjModule">
+		insert into pj_module
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				id,
+			</if>
+			<if test="pid != null" >
+				pid,
+			</if>
+			<if test="mod_name != null">
+				mod_name,
+			</if>
+			<if test="mod_comment != null" >
+				mod_comment,
+			</if>
+			<if test="url != null" >
+				url,
+			</if>
+			<if test="modu_type != null" >
+				modu_type,
+			</if>
+			<if test="remark != null" >
+				remark,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				#{id},
+			</if>
+			<if test="pid != null" >
+				#{pid},
+			</if>
+			<if test="mod_name != null" >
+				#{mod_name},
+			</if>
+			<if test="mod_comment != null" >
+				#{mod_comment},
+			</if>
+			<if test="url != null" >
+				#{url},
+			</if>
+			<if test="modu_type != null" >
+				#{modu_type},
+			</if>
+			<if test="remark != null" >
+				#{remark},
+			</if>
+		</trim>
+	</insert>
+</mapper>

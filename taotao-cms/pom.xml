@@ -28,12 +28,6 @@
     </properties>
 
     <dependencies>
-        <!-- 中文转拼音 -->
-        <dependency>
-            <groupId>com.github.obiteaaron</groupId>
-            <artifactId>pinyin4j-multi</artifactId>
-            <version>1.0.0</version>
-        </dependency>
 
         <!-- FTP上传 -->
         <dependency>
@@ -184,13 +178,13 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
-            <version>${org.springframework-version}</version>
+            <version>3.2.3.RELEASE</version>
         </dependency>
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${org.springframework-version}</version>
+            <version>3.2.3.RELEASE</version>
             <exclusions>
                 <!-- Exclude Commons Logging in favor of SLF4j -->
                 <exclusion>
@@ -202,7 +196,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>${org.springframework-version}</version>
+            <version>3.2.3.RELEASE</version>
         </dependency>
 
 
@@ -341,6 +335,11 @@
             <artifactId>sms-util</artifactId>
             <version>1.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.2</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -383,15 +382,16 @@
                 </executions>
             </plugin>
         </plugins>
-
-
-
-
-
-
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
                 <filtering>true</filtering>
             </resource>
         </resources>

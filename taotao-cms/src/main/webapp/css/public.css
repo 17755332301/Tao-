@@ -1,0 +1,131 @@
+/*全局*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+form,
+img,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+blockquote,
+fieldset,
+div,
+strong,
+label,
+em {
+	margin: 0;
+	padding: 0;
+}
+
+a,
+button {
+	text-decoration: none;
+	color: #666;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+ol,
+ul,
+li {
+	list-style: none;
+}
+
+fieldset,
+img { display:block;
+	border: 0;
+	-webkit-tap-highlight-color: rgba(255, 0, 0, 0);cursor: pointer;
+}
+textarea {
+	resize: none;
+}
+
+em,
+address,
+i {
+	font-style: normal;
+}
+
+input {
+	outline: none;
+}
+ /*全屏css*/
+ 
+ .mainwrapper {
+		    width: 38%;
+		    margin: 0 auto;
+		}
+		 
+		.mainwrapper h2 {
+		 text-align:center;
+		}
+		 
+		.mainwrapper p{
+		 font-size:12px;
+		 color:black;
+		 text-align:center;
+		 font-family:"微软雅黑",sans-serif;
+		 padding-top:15px;
+		}
+		 
+		.fullscreen {
+		    position: relative;
+		}
+		.fullscreen .full-button {
+		    display: inline-block;
+		    z-index: 105;
+		    height: 127px;
+		    width: 91px;
+		    position: absolute;
+		    top: 0px;
+		    right: 50%;
+		    cursor: pointer;
+		}
+		 
+		.fullscreen .full-button:after {  
+		    display: inline-block;  
+		    width: 100%;  
+		    height: 100%;  
+		    font-size: 34px;  
+		    cursor: pointer;  
+		}  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

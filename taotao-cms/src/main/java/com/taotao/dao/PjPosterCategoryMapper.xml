@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.dao.PjPosterCategoryMapper">
+
+    <!--通过id查询分类名称-->
+    <select id="selectPjPosterCategoryById" parameterType="java.lang.Integer" resultType="com.taotao.model.PjPosterCategory">
+        SELECT *
+        from pj_poster_category
+        WHERE id = #{id}
+    </select>
+
+    <!--通过id查询所有的方法-->
+    <delete id="deletePjPosterCategory" parameterType="java.lang.Integer">
+        DELETE FROM pj_poster_category where id = #{id}
+    </delete>
+
+    <!--查询所有的广告位-->
+    <select id="selectPjPosterCategoryAll" resultType="com.taotao.model.PjPosterCategory">
+        SELECT *
+        from pj_poster_category
+    </select>
+
+   <!--插入一条广告分类-->
+    <insert id="insertPosterCategory" parameterType="com.taotao.model.PjPosterCategory">
+        insert into pj_poster_category
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null" >
+            id,
+        </if>
+        <if test="category_name != null">
+            category_name,
+        </if>
+        <if test="create_time != null" >
+            create_time,
+        </if>
+        <if test="category_status != null" >
+            category_status,
+        </if>
+        <if test="category_account != null" >
+            category_account,
+        </if>
+        <if test="category_discription != null" >
+            category_discription
+        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null" >
+            #{id},
+        </if>
+        <if test="category_name != null" >
+            #{category_name},
+        </if>
+        <if test="create_time != null" >
+            #{create_time},
+        </if>
+        <if test="category_status != null" >
+            #{category_status},
+        </if>
+        <if test="category_account != null" >
+            #{category_account},
+        </if>
+        <if test="category_discription != null" >
+            #{category_discription}
+        </if>
+    </trim>
+    </insert>
+
+</mapper>

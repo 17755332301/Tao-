@@ -52,5 +52,10 @@
         <!-- 配置“/”拦截所有请求，jsp除外 -->
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>taotao-cms</servlet-name>
+        <!-- 配置“/”拦截所有请求，jsp除外 -->
+        <url-pattern>*.swf</url-pattern>
+    </servlet-mapping>
    
 </web-app>

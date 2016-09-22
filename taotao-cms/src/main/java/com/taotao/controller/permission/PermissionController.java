@@ -81,7 +81,9 @@ public class PermissionController {
      */
     @RequestMapping("/outLogin")
     public String outLogin(HttpServletRequest request){
-        request.getSession().removeAttribute("user");
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
+        session.invalidate();
         return "login";
     }
 

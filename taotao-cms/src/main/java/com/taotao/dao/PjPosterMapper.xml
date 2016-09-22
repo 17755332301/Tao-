@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.dao.PjPosterMapper">
+
+    <!--删除-->
+    <delete id="deletePjPoster" parameterType="java.lang.Integer" >
+        DELETE FROM pj_poster
+        WHERE id = #{id}
+    </delete>
+    <!--通过id查询-->
+    <select id="selectPjPosterById" parameterType="java.lang.Integer" resultType="com.taotao.model.PjPoster">
+        SELECT *
+        from pj_poster
+        WHERE id = #{id}
+    </select>
+    <!--查询最大的id-->
+    <select id="selectMaxId" resultType="java.lang.Integer">
+        SELECT max(id)
+        from pj_poster
+    </select>
+    <!--通过分类id查询广告-->
+    <select id="selectPjPosterByCategoryId" parameterType="java.lang.Integer" resultType="com.taotao.model.PjPoster">
+        SELECT *
+        from pj_poster
+        WHERE category_id = #{id}
+    </select>
+
+    <!--查询所有的广告-->
+    <select id="selectAllPoster" parameterType="java.lang.Integer" resultType="com.taotao.model.PjPoster">
+        SELECT *
+        from pj_poster
+    </select>
+
+    <!--插入-->
+    <insert id="insertPoster" parameterType="com.taotao.model.PjPoster">
+        insert into pj_poster
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="category_id != null">
+                category_id,
+            </if>
+            <if test="category_name != null" >
+                category_name,
+            </if>
+            <if test="poster_sort != null" >
+                poster_sort,
+            </if>
+            <if test="poster_url != null" >
+                poster_url,
+            </if>
+            <if test="poster_small_url != null" >
+                poster_small_url,
+            </if>
+            <if test="poster_size != null" >
+                poster_size,
+            </if>
+            <if test="create_time != null" >
+                create_time,
+            </if>
+            <if test="poster_status != null" >
+                poster_status,
+            </if>
+            <if test="poster_address != null" >
+                poster_address,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id},
+            </if>
+            <if test="category_id != null" >
+                #{category_id},
+            </if>
+            <if test="category_name != null" >
+                #{category_name},
+            </if>
+            <if test="poster_sort != null" >
+                #{poster_sort},
+            </if>
+            <if test="poster_url != null" >
+                #{poster_url},
+            </if>
+            <if test="poster_small_url != null" >
+                #{poster_small_url},
+            </if>
+            <if test="poster_size != null" >
+                #{poster_size},
+            </if>
+            <if test="create_time != null" >
+                #{create_time},
+            </if>
+            <if test="poster_status != null" >
+                #{poster_status},
+            </if>
+            <if test="poster_address != null" >
+                #{poster_address},
+            </if>
+        </trim>
+    </insert>
+
+    <!--更新-->
+    <update id="updatePjPoster" parameterType="com.taotao.model.PjPoster">
+        update pj_poster
+        <set>
+            <if test="category_id != null">
+                category_id = #{category_id},
+            </if>
+            <if test="category_name != null">
+                category_name = #{category_name},
+            </if>
+            <if test="poster_sort != null">
+                poster_sort = #{poster_sort},
+            </if>
+            <if test="poster_url != null">
+                poster_url = #{poster_url},
+            </if>
+            <if test="poster_small_url != null">
+                poster_small_url = #{poster_small_url},
+            </if>
+            <if test="poster_size != null">
+                poster_size = #{poster_size},
+            </if>
+            <if test="create_time != null">
+                create_time = #{create_time},
+            </if>
+            <if test="poster_status != null">
+                poster_status = #{poster_status},
+            </if>
+            <if test="poster_address != null">
+                poster_address = #{poster_address},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+
+
+</mapper>

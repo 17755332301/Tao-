@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,20 +9,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-         <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css"/>       
-        <link href="assets/css/codemirror.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/ace.min.css" />
-        <link rel="stylesheet" href="font/css/font-awesome.min.css" />
+         <link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
+        <link href="${pageContext.request.contextPath}/assets/css/codemirror.css" rel="stylesheet">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/ace.min.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/font/css/font-awesome.min.css" />
         <!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/ace-ie.min.css" />
 		<![endif]-->
-		<script src="js/jquery-1.9.1.min.js"></script>
-		<script src="assets/js/typeahead-bs2.min.js"></script>   
-        <script src="js/lrtk.js" type="text/javascript" ></script>		
-		<script src="assets/js/jquery.dataTables.min.js"></script>
-		<script src="assets/js/jquery.dataTables.bootstrap.js"></script>
-        <script src="assets/layer/layer.js" type="text/javascript" ></script>                 
+		<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/typeahead-bs2.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/lrtk.js" type="text/javascript" ></script>
+		<script src="${pageContext.request.contextPath}/assets/js/jquery.dataTables.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/jquery.dataTables.bootstrap.js"></script>
+        <script src="${pageContext.request.contextPath}/assets/layer/layer.js" type="text/javascript" ></script>
 <title>分类管理</title>
 </head>
 
@@ -48,39 +51,47 @@
 			</tr>
 		</thead>
 	<tbody>
+	<c:forEach items="${list}" var="item">
       <tr>
        <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-       <td>1</td>
-       <td>幻灯片</td>
-       <td>5</td>
-       <td>首页顶部广告轮播图，大图区别于其他图片</td>
-       <td>2016-6-29 12:34</td>
+       <td>${item.id}</td>
+       <td>${item.category_name}</td>
+       <td>${item.number}</td>
+       <td>${item.category_discription}</td>
+       <td><fmt:formatDate value="${item.create_time}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
        <td class="td-status"><span class="label label-success radius">显示</span></td>
       <td class="td-manage">
         <a onClick="member_stop(this,'10001')"  href="javascript:;" title="停用"  class="btn btn-xs btn-success"><i class="fa fa-check  bigger-120"></i></a>   
         <a title="编辑" onclick="member_edit('编辑','member-add.html','4','','510')" href="javascript:;"  class="btn btn-xs btn-info" ><i class="fa fa-edit bigger-120"></i></a>      
-        <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
-        <a href="javascript:ovid()" name="Ads_list.html" class="btn btn-xs btn-pink ads_link" onclick="AdlistOrders('561');" title="幻灯片广告列表"><i class="fa  fa-bars  bigger-120"></i></a>
+        <a title="删除" href="javascript:;"  onclick="member_del(this,'${item.id}')" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
+        <a href="javascript:ovid()" name="Ads_list.html" class="btn btn-xs btn-pink ads_link" onclick="AdlistOrders('${item.id}');" title="幻灯片广告列表"><i class="fa  fa-bars  bigger-120"></i></a>
        </td>
       </tr>
+	</c:forEach>
     </tbody>
     </table>
   </div>
  </div>
 </div>
 <!--添加分类-->
+<form name="addPosterCategory" method="post">
 <div class="sort_style_add margin" id="sort_style_add" style="display:none">
+
   <div class="">
+
      <ul>
-      <li><label class="label_name">分类名称</label><div class="col-sm-9"><input name="分类名称" type="text" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5"></div></li>
-      <li><label class="label_name">分类说明</label><div class="col-sm-9"><textarea name="分类说明" class="form-control" id="form-field-8" placeholder="" onkeyup="checkLength(this);"></textarea><span class="wordage">剩余字数：<span id="sy" style="color:Red;">200</span>字</span></div></li>
+      <li><label class="label_name">分类名称</label><div class="col-sm-9"><input name="category_name" type="text" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5"></div></li>
+      <li><label class="label_name">分类说明</label><div class="col-sm-9"><textarea name="category_discription" class="form-control" id="form-field-8" placeholder="" onkeyup="checkLength(this);"></textarea><span class="wordage">剩余字数：<span id="sy" style="color:Red;">200</span>字</span></div></li>
       <li><label class="label_name">分类状态</label>
-      <span class="add_content"> &nbsp;&nbsp;<label><input name="form-field-radio1" type="radio" checked="checked" class="ace"><span class="lbl">显示</span></label>&nbsp;&nbsp;&nbsp;
-     <label><input name="form-field-radio1" type="radio" class="ace"><span class="lbl">隐藏</span></label></span>
+      <span class="add_content"> &nbsp;&nbsp;<label><input name="category_status" type="radio" checked="checked" class="ace" value="0"><span class="lbl">显示</span></label>&nbsp;&nbsp;&nbsp;
+     <label><input name="category_status" type="radio" class="ace" value="1"><span class="lbl">隐藏</span></label></span>
      </li>
      </ul>
+
   </div>
+
 </div>
+</form>
 </body>
 </html>
 <script type="text/javascript">
@@ -93,11 +104,11 @@ $('#sort_add').on('click', function(){
         area : ['750px' , ''],
         content:$('#sort_style_add'),
 		btn:['提交','取消'],
-		yes:function(index,layero){	
+		yes:function(index,layero){
 		 var num=0;
 		 var str="";
      $(".sort_style_add input[type$='text']").each(function(n){
-          if($(this).val()=="")
+        /*  if($(this).val()=="")
           {
                
 			   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
@@ -106,16 +117,45 @@ $('#sort_add').on('click', function(){
           }); 
 		    num++;
             return false;            
-          } 
+          } */
 		 });
 		  if(num>0){  return false;}	 	
           else{
-			  layer.alert('添加成功！',{
-               title: '提示框',				
-			icon:1,		
+
+			var a = $("#form-field-1").val();
+			  if(a.trim() == '' || a == null){
+				  layer.alert('请输入分类名称！',{
+					  title: '提示框',
+					  icon:0,
+				  });
+				  return ;
+			  }
+
+			  var b = $("#form-field-8").val();
+			  if(b.trim() == '' || b == null){
+				  layer.alert('请输入分类说明！',{
+					  title: '提示框',
+					  icon:0,
+				  });
+				  return ;
+			  }
+
+             //提交分类
+             $.ajax({
+				  url:'${pageContext.request.contextPath}/poster/insertPosterCategory',
+				  type:'POST',
+				  data:$("form[name='addPosterCategory']").serializeArray(),
+				  success:function(val){
+					   if(val.code == 1){
+						   layer.msg('添加成功!',{icon:1,time:1000});
+						   window.location.reload();
+					   }
+					  if(val.code == 2){
+						  layer.msg('添加失败!',{icon:0,time:1000});
+					  }
+				  }
 			  });
-			   layer.close(index);	
-		  }		  		     				
+		  }
 		}
     });
 })
@@ -149,18 +189,24 @@ function member_stop(obj,id){
 }
 /*广告图片-启用*/
 function member_start(obj,id){
-	layer.confirm('确认要显示吗？',{icon:0,},function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="关闭"><i class="fa fa-check  bigger-120"></i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">显示</span>');
-		$(obj).remove();
-		layer.msg('显示!',{icon: 6,time:1000});
-	});
-}
-/*广告图片-删除*/
-function member_del(obj,id){
+
 	layer.confirm('确认要删除吗？',{icon:0,},function(index){
-		$(obj).parents("tr").remove();
-		layer.msg('已删除!',{icon:1,time:1000});
+		$.ajax({
+			url:'${pageContext.request.contextPath}/poster/deletePosterCategory',
+			type:'post',
+			data:{"id":id},
+			success:function(val){
+				if(val.code ==1){
+					window.location.reload();
+					layer.msg('已删除!',{icon:1,time:1000});
+
+				}
+				if(val.code == 2){
+					layer.msg('删除失败!',{icon:0,time:1000});
+				}
+			}
+		});
+
 	});
 }
 //面包屑返回值
@@ -178,7 +224,7 @@ $('.Order_form ,.ads_link').on('click', function(){
 	
 });
 function AdlistOrders(id){
-	window.location.href = "Ads_list.html?="+id;
+	layer.msg('未开发!',{icon:0,time:1000});
 };
 </script>
 <script type="text/javascript">

@@ -141,21 +141,15 @@ $('#login_btn').on('click', function(){
 				  success:function(val){
 
 					  if(val.data ==1){
-
-						   layer.alert('登录失败！',{
+						   layer.alert('账户或密码错误！',{
 							  title: '提示框',
 							  icon:0,
 
 						   });
 					  }
 					  if(val.data ==2){
-						  layer.alert('登陆成功！',{
-							  title: '提示框',
-							  icon:1,
-						  });
+						  layer.msg('登录成功!',{icon:1,time:1000});
 						  window.location.href="${pageContext.request.contextPath}/index";
-						  layer.close(index);
-
 					  }
 
 				  }

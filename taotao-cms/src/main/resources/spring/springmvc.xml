@@ -18,7 +18,6 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	<!-- 静态资源映射 -->
-	<mvc:resources location="/" mapping="/*" />
 	<mvc:resources location="/404/" mapping="/404/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
@@ -28,6 +27,15 @@
 	<mvc:resources location="/products/" mapping="/products/**" />
 	<mvc:resources location="/upload/" mapping="/upload/**" />
 	<mvc:resources location="/Widget/" mapping="/Widget/**" />
+	<mvc:resources location="/" mapping="/**" />
 
 
+	<!--配置多媒体上传解析器 -->
+	<bean id="multipartResolver"
+		  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!--设置编码 -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!--设定文件上传的最大值5MB -->
+		<property name="maxUploadSize" value="5242880"></property>
+	</bean>
 </beans>

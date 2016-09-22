@@ -5,7 +5,7 @@ pageEncoding="UTF-8"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>欢迎进入主页</title>
-<link href="${pageContext.request.contextPath}/css/reset.css"  rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
 
@@ -48,19 +48,43 @@ pageEncoding="UTF-8"%>
   　　}
     </script>
 <style type="text/css">
-#massage_box{ position:absolute; background:#fff url("${pageContext.request.contextPath}/images/lang-headerbg.jpg") repeat-x; left:300px; top:49px; width:775px; height:486px;filter:dropshadow(color=#666666,offx=3,offy=3,positive=2); z-index:2; visibility:hidden;padding-top:3px;}
+#massage_box{ position:absolute; background:#fff url("${pageContext.request.contextPath}/images/lang-headerbg.jpg") repeat-x; left:300px; top:49px; width:775px; height:486px;filter:dropshadow(color=#FF0042,offx=3,offy=3,positive=2); z-index:2; visibility:hidden;padding-top:3px;}
 #mask{ position:absolute; top:0; left:0; width:expression(body.scrollWidth); height:expression(body.scrollHeight); filter:ALPHA(opacity=60); z-index:1; visibility:hidden}
-.massage{width:100%; height:100%; color:#036; font-size:12px; line-height:150%}
-.header{ color:#fff}
+.massage{width:100%; height:100%; color:#6a6a6a; font-size:12px; line-height:150%}
+.header{ color:H}
 #massage_box ul{ margin-right:25; float:left; display:block;}
-#massage_box ul li{padding-left:70px; font:12px/24px Candara; color:#093079; }
-#massage_box ul li strong{ height:47px; font:bold 14px/47px Candara; color:#093079}
-#massage_box ul li a{ color:#093079;font:12px/24px Candara; text-decoration:none;  padding-left:9px; }
-#massage_box ul li a:hover{ color:#e37006;font:12px/24px Candara; text-decoration:none; background:url("../images/submenulihover.png") left center no-repeat; padding-left:9px;}
-    </style>
+#massage_box ul li{padding-left:70px; font:12px/24px Candara; color:#FF0042; }
+#massage_box ul li strong{ height:47px; font:bold 14px/47px Candara; color:#FF0042}
+#massage_box ul li a{ color:#FF0042;font:12px/24px Candara; text-decoration:none;  padding-left:9px; }
+#massage_box ul li a:hover{ color:#FF0042;font:12px/24px Candara; text-decoration:none; background:url("../images/submenulihover.png") left center no-repeat; padding-left:9px;}
+#hovera a:hover{text-decoration:none;padding-left:5px;}
+
+body, button, input, select, textarea {
+    color: #6a6a6a;
+    font: 14px/1.6 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+.clear::after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+}
+.common-top-nav {
+    background-color: #333;
+    font-size: 12px;
+    height: 40px;
+    min-width: 990px;
+    position: relative;
+    z-index: 7999;
+}
+.clear {
+}
+
+
+
+</style>
 </head>
 <body>
-
       <div id="head">
       <div class="headcontent">
         <div id="sbmlogo"><a href=""><h1>XXXX科技有限公司</h1></a></div>
@@ -82,9 +106,9 @@ pageEncoding="UTF-8"%>
           </div>
           <div class="clear"></div>
           <div id="navigation" class="smartmenu">
-            <ul>
+            <ul class="oo">
               <li><a href="index.html" class="current">首页</a></li>
-              <li id=""><a href="prolist.html">产品中心</a>
+              <li id=""><a href="../../prolist.html">产品中心</a>
                 <ul>
                     <li><a href="#">ERP软件</a></li>
                     <li><a href="#">财务软件</a>
@@ -93,31 +117,31 @@ pageEncoding="UTF-8"%>
                 </ul>
               </li>
               <li id="">
-                <a href="prolist.html">解决方案</a>
+                <a href="../../prolist.html">解决方案</a>
                 <ul>
                   <li><a href="#">技术解决方案</a></li>
                   <li><a href="#">行业解决方案</a></li>
                   <li><a href="#">成功案例</a></li>
                 </ul>
               </li>
-              <li id=""><a href="list.html">新闻中心</a>
+              <li id=""><a href="../../list.html">新闻中心</a>
                 <ul>
                   <li><a href="#">公司动态</a></li><li><a href="#">行业资讯</a></li>
                 </ul>
               </li>
-              <li id=""><a href="download.html">服务支持</a>
+              <li id=""><a href="../../download.html">服务支持</a>
                 <ul>
                <li><a href="#">资料文档</a></li>
                <li><a href="#">软件更新</a></li>
                 </ul>
               </li>
-          <li id=""> <a href="about.html">合作伙伴</a>
+          <li id=""> <a href="../../about.html">合作伙伴</a>
 
       <ul>
                   <li><a href="#">渠道战略</a></li><li><a href="#">合作加盟</a></li>
                 </ul>
       </li>
-    <li id=""><a href="about.html">关于我们</a>
+    <li id=""><a href="../../about.html">关于我们</a>
                  <ul>
                   <li><a href="#">公司介绍</a></li>
                   <li><a href="#">联系我们</a></li>
@@ -138,13 +162,13 @@ pageEncoding="UTF-8"%>
         <div id="imageShow">
           <div id="imgshow_mask"></div>
           <ul class="imagebg" id="imagebg">
-           <li data-sPic="${pageContext.request.contextPath}/images/111.jpg" style="background:#fff url(images/11.jpg) center no-repeat;><a href="" class="bannerbg_main" style="background:url(../images/11.jpg) 50% 50% no-repeat;" ></a>         </li>
-           <li data-sPic="${pageContext.request.contextPath}/images/222.jpg" style="background:#fff url(images/22.jpg) center no-repeat;><a href="" class="bannerbg_main" style="background:url(../images/22.jpg) 50% 50% no-repeat;" ></a></li>
-           <li data-sPic="${pageContext.request.contextPath}/images/333.jpg" style="background:#fff url(images/33.jpg) center no-repeat;><a href="" class="bannerbg_main" style="background:url(../images/33.jpg) 50% 50% no-repeat;" ></a></li>
-           <li data-sPic="${pageContext.request.contextPath}/images/444.jpg" style="background:#fff url(images/44.jpg) center no-repeat;><a href="" class="bannerbg_main" style="background:url(../images/44.jpg) 50% 50% no-repeat;" ></a></li>
-           <li data-sPic="${pageContext.request.contextPath}/images/555.jpg" style="background:#fff url(images/55.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(../images/55.jpg) 50% 50% no-repeat;" ></a></li>
+           <li data-sPic="http://localhost:8081/upload/small/1474535397209.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/11.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/11.jpg) 50% 50% no-repeat;" ></a></li>
+           <li data-sPic="${pageContext.request.contextPath}/images/222.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/22.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/22.jpg) 50% 50% no-repeat;" ></a></li>
+           <li data-sPic="${pageContext.request.contextPath}/images/333.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/33.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/33.jpg) 50% 50% no-repeat;" ></a></li>
+           <li data-sPic="${pageContext.request.contextPath}/images/444.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/44.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/44.jpg) 50% 50% no-repeat;" ></a></li>
+           <li data-sPic="${pageContext.request.contextPath}/images/555.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/55.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/55.jpg) 50% 50% no-repeat;" ></a></li>
           </ul>
-
+         <%--   --%>
           <div class="scrollbg">
             <div class="scroll">
               <a id="left_img_btn" class="s_pre" href="javascript:void(0)"></a>
@@ -182,17 +206,17 @@ pageEncoding="UTF-8"%>
       <div class="bottomcontent">
         <div class="bottomleft">
           <ul>
-<li><a href="proview.html">财务软件解决方案</a></li>
-<li><a href="proview.html">员工管理软件解决方案</a></li>
-<li><a href="proview.html">房地产行业管理方案</a></li>
-<li><a href="proview.html">互联网方案</a></li>
-<li><a href="proview.html">安全加密方案</a></li>
-<li><a href="proview.html">特殊行业解决方案</a></li>
+<li><a href="../../proview.html">财务软件解决方案</a></li>
+<li><a href="../../proview.html">员工管理软件解决方案</a></li>
+<li><a href="../../proview.html">房地产行业管理方案</a></li>
+<li><a href="../../proview.html">互联网方案</a></li>
+<li><a href="../../proview.html">安全加密方案</a></li>
+<li><a href="../../proview.html">特殊行业解决方案</a></li>
           </ul>
 
           <div id="prosearch">
         </div>
-          <div class="miningprocess"><a href="">查看更多解决方案</a></div>
+         <%-- <div class="miningprocess"><a href="">查看更多解决方案</a></div>--%>
         </div>
         <div class="bottomcenter">
           <div class="centerleft">
@@ -225,7 +249,7 @@ pageEncoding="UTF-8"%>
           </div>
           <a href="" class="learnmore">查看更多</a>  <br/><br/>
             <wb:follow-button uid="" type="red_3" width="100%" height="24" ></wb:follow-button>
-          <div><a href='#' onclick='openwin()'><img src="images/weixin1.png" style='margin-left:38px'/></a><a href=''>&nbsp;&nbsp;&nbsp;微信公众号</a></div>
+          <div><a href='#' onclick='openwin()'><img src="../../images/weixin1.png" style='margin-left:38px'/></a><a href=''>&nbsp;&nbsp;&nbsp;微信公众号</a></div>
         </div>
         <div class="clear"></div>
       </div>
@@ -239,22 +263,31 @@ pageEncoding="UTF-8"%>
           <span class="follow"><a href="" class="sharetwitter"></a>
             <a href=""  class="sharefacebook"></a></span> <a href="#" class="top"></a>
         </div>
-        <div class="links">Copyright © 2016 芜湖科技有限公司. All rights reserved</div>
-        <div class="contacts">
-          <ul>
-            <li class="tel">400-800-8800</li>
-            <li class="fax">025-8888888</li>
-            <li class="email"><a href="">123456@123.com</a></li>
-          </ul>
-        </div>
+
         <div class="clear"></div>
       </div>
-<div style="width:100%;height:100%;;background-color:#07132d"">
-     <div style="width:960px;height:90px;margin:0 auto;background-color:#07132d;color:#41638d">友情链接:
-      <a href="http://www.baidu.com" style="color:#41638d" target="_blank">百度</a>
+<div style="width:100%;height:100%;background-color:#FF0042;text-align:center;padding:10px 0;">
+
+    <div id="hovera" style="width:50%;height:100%;background-color:#FF0042;text-align:left;margin:0 28%;padding:5px 0;">
+
+         <span style="color:#FFFFFF">Copyright © 2016 芜湖科技有限公司. All rights reserved</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <span style="color:#FFFFFF">电话：400-800-8800&nbsp;&nbsp;&nbsp;QQ：623362984&nbsp;&nbsp;&nbsp;Email：taotingkai_ohyeah@163.com</span><br/> <br/>
+
+        <span style="color:#FFFFFF">友情链接:</span><a href="http://www.baidu.com" style="color:#FFFFFF" target="_blank">  百度  |</a>
+        <a href="http://www.sina.com.cn/" style="color:#FFFFFF" target="_blank">新浪  |</a>
+        <a href="http://www.qq.com/" style="color:#FFFFFF" target="_blank">腾讯  |</a>
+        <a href="http://www.youku.com/" style="color:#FFFFFF" target="_blank">优酷  |</a>
+        <a href="http://www.zhihu.com/" style="color:#FFFFFF" target="_blank">知乎  |</a>
+        <a href="http://www.baihe.com/" style="color:#FFFFFF" target="_blank">百合网</a>
 </div>
+    </div>
 
 </div>
+
+
+
  </div>
+     </div>
 </body>
 </html>

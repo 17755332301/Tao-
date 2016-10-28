@@ -122,7 +122,7 @@ public class PosterController {
             File targetFile = new File(path, fileName);
             PjPoster pjPoster = new PjPoster();
             pjPoster.setCreate_time(new Date());
-            pjPoster.setPoster_url(request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/upload/" + fileName);
+            pjPoster.setPoster_url("http://51taorui.com/upload/" + fileName);
 
             Filedata.transferTo(targetFile);
                /* 按指定大小把图片进行缩放（会遵循原图高宽比例）*/
@@ -133,7 +133,7 @@ public class PosterController {
             Thumbnails.of(originPath).
                     forceSize(145,65).//压缩图片的大小
                     toFile(descPath);//
-            pjPoster.setPoster_small_url(request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/upload/small/" + fileName);
+            pjPoster.setPoster_small_url("http://51taorui.com/upload/small/" + fileName);
             posterService.insertPoster(pjPoster);//添加
 
 

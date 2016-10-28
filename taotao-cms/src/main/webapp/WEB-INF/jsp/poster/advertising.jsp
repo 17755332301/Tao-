@@ -79,7 +79,7 @@
        <td>${item.id}</td>
        <td><input name="" type="text"  style=" width:50px" placeholder="${item.poster_sort}"/></td>
        <td>${item.category_name}</td>
-       <td><img src="${item.poster_url}" width="80" height="60"/></td>
+       <td><img src="${item.poster_url}" width="130" height="60"/></td>
        <td><a href="#" target="_blank">${item.poster_size}</a></td>
        <td>${item.poster_url}</td>
 		<td><fmt:formatDate value="${item.create_time}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
@@ -124,7 +124,7 @@
      </li>
      <li><label class="label_name">图片</label><span class="cont_style">
   <div class="demo" >
-	           <div class="logobox"><div class="resizebox"><img id="imgPath" src="${pageContext.request.contextPath}/images/image.png" width="190px" alt="" height="115px"/></div></div>
+	           <div class="logobox"><div class="resizebox"><img id="imgPath" src="${pageContext.request.contextPath}/images/image.png" width="250px" alt="" height="115px"/></div></div>
                <div class="logoupload">
                   <div class="btnbox"><a id="uploadBtnHolder" class="uploadbtn" href="javascript:;">上传替换</a></div>
                   <div style="clear:both;height:0;overflow:hidden;"></div>

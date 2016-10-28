@@ -1,26 +1,40 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>欢迎进入主页</title>
+
+
+
+
 <link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
-
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/111.ico">
  <!--导航特效-->
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/smartmenu-min.js" ></script>
 <script type="text/javascript">
-      jQuery(window).ready(function(){
-      jQuery("#navigation").Smartmenu({animationDuration: 350});
-      });
-      //SyntaxHighlighter.all();
-</script>
+      jQuery(window).ready(function() {
+          jQuery("#navigation").Smartmenu({animationDuration: 350});
+      })
+      </script>
 <!--导航特效end-->
-<script language="javascript">
-      var Obj=''
+  <script type="text/javascript">
+
+      //百度统计
+      var _hmt = _hmt || [];
+      (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?f64d32151bb3677d279bd7062ddfb6de";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();
+
+    var Obj=''
       document.onmouseup=MUp
       document.onmousemove=MMove
       function MDown(Object){
@@ -46,6 +60,7 @@ pageEncoding="UTF-8"%>
 　　function   openwin()   {
   　　window.open   ("weixin2.html",   "newwindow",   "height=300,   width=300,   toolbar   =no,   top=200 , left=400,menubar=no,   scrollbars=no,   resizable=no,   location=no,   status=no")   //写成一行
   　　}
+
     </script>
 <style type="text/css">
 #massage_box{ position:absolute; background:#fff url("${pageContext.request.contextPath}/images/lang-headerbg.jpg") repeat-x; left:300px; top:49px; width:775px; height:486px;filter:dropshadow(color=#FF0042,offx=3,offy=3,positive=2); z-index:2; visibility:hidden;padding-top:3px;}
@@ -57,7 +72,6 @@ pageEncoding="UTF-8"%>
 #massage_box ul li strong{ height:47px; font:bold 14px/47px Candara; color:#FF0042}
 #massage_box ul li a{ color:#FF0042;font:12px/24px Candara; text-decoration:none;  padding-left:9px; }
 #massage_box ul li a:hover{ color:#FF0042;font:12px/24px Candara; text-decoration:none; background:url("../images/submenulihover.png") left center no-repeat; padding-left:9px;}
-#hovera a:hover{text-decoration:none;padding-left:5px;}
 
 body, button, input, select, textarea {
     color: #6a6a6a;
@@ -80,14 +94,12 @@ body, button, input, select, textarea {
 .clear {
 }
 
-
-
 </style>
 </head>
 <body>
-      <div id="head">
+<div id="head">
       <div class="headcontent">
-        <div id="sbmlogo"><a href=""><h1>XXXX科技有限公司</h1></a></div>
+        <div id="sbmlogo"><a href="http://www.51taorui.com"><h1>芜湖淘瑞科技有限公司</h1></a></div>
         <div class="topright">
           <div id="logoright">
             <!--popwindow end-->
@@ -107,8 +119,8 @@ body, button, input, select, textarea {
           <div class="clear"></div>
           <div id="navigation" class="smartmenu">
             <ul class="oo">
-              <li><a href="index.html" class="current">首页</a></li>
-              <li id=""><a href="../../prolist.html">产品中心</a>
+              <li><a href="http://www.51taorui.com" class="current">首页</a></li>
+              <li><a href="${pageContext.request.contextPath}/prolist">产品中心</a>
                 <ul>
                     <li><a href="#">ERP软件</a></li>
                     <li><a href="#">财务软件</a>
@@ -116,32 +128,32 @@ body, button, input, select, textarea {
                     <li><a href="#">服务器</a></li>
                 </ul>
               </li>
-              <li id="">
-                <a href="../../prolist.html">解决方案</a>
+              <li>
+                <a href="${pageContext.request.contextPath}/prolist">解决方案</a>
                 <ul>
                   <li><a href="#">技术解决方案</a></li>
                   <li><a href="#">行业解决方案</a></li>
                   <li><a href="#">成功案例</a></li>
                 </ul>
               </li>
-              <li id=""><a href="../../list.html">新闻中心</a>
+              <li><a href="${pageContext.request.contextPath}/list">新闻中心</a>
                 <ul>
                   <li><a href="#">公司动态</a></li><li><a href="#">行业资讯</a></li>
                 </ul>
               </li>
-              <li id=""><a href="../../download.html">服务支持</a>
+              <li><a href="${pageContext.request.contextPath}/download">服务支持</a>
                 <ul>
                <li><a href="#">资料文档</a></li>
                <li><a href="#">软件更新</a></li>
                 </ul>
               </li>
-          <li id=""> <a href="../../about.html">合作伙伴</a>
+          <li> <a href="${pageContext.request.contextPath}/about">合作伙伴</a>
 
       <ul>
                   <li><a href="#">渠道战略</a></li><li><a href="#">合作加盟</a></li>
                 </ul>
       </li>
-    <li id=""><a href="../../about.html">关于我们</a>
+    <li><a href="${pageContext.request.contextPath}/about">关于我们</a>
                  <ul>
                   <li><a href="#">公司介绍</a></li>
                   <li><a href="#">联系我们</a></li>
@@ -161,12 +173,10 @@ body, button, input, select, textarea {
 <div id="container" style="overflow:hidden;">
         <div id="imageShow">
           <div id="imgshow_mask"></div>
-          <ul class="imagebg" id="imagebg">
-           <li data-sPic="http://localhost:8081/upload/small/1474535397209.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/11.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/11.jpg) 50% 50% no-repeat;" ></a></li>
-           <li data-sPic="${pageContext.request.contextPath}/images/222.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/22.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/22.jpg) 50% 50% no-repeat;" ></a></li>
-           <li data-sPic="${pageContext.request.contextPath}/images/333.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/33.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/33.jpg) 50% 50% no-repeat;" ></a></li>
-           <li data-sPic="${pageContext.request.contextPath}/images/444.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/44.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/44.jpg) 50% 50% no-repeat;" ></a></li>
-           <li data-sPic="${pageContext.request.contextPath}/images/555.jpg" style="background:#fff url(${pageContext.request.contextPath}/images/55.jpg) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${pageContext.request.contextPath}/images/55.jpg) 50% 50% no-repeat;" ></a></li>
+            <ul class="imagebg" id="imagebg">
+              <c:forEach items="${pjPoster}" var="item">
+              <li data-sPic="${item.poster_small_url}" style="background:#fff url(${item.poster_url}) center no-repeat;"><a href="" class="bannerbg_main" style="background:url(${item.poster_url}) 50% 50% no-repeat;" ></a></li>
+              </c:forEach>
           </ul>
          <%--   --%>
           <div class="scrollbg">
@@ -181,22 +191,22 @@ body, button, input, select, textarea {
           </div>
         </div>
         <script type="text/javascript" src="${pageContext.request.contextPath}/js/imgSlider.js"></script>
-        <script type="text/javascript">
-          img.init();
-          img.play(0);
-          //阻止事件冒泡
-          function estop(e){
-          var e=arguments.callee.caller.arguments[0]||event;
-          if (e && e.stopPropagation){
-          //因此它支持W3C的stopPropagation()方法
-          e.stopPropagation();
-          }else{
-          //否则，我们需要使用IE的方式来取消事件冒泡
-          window.event.cancelBubble = true;
-          return false;
-          }
-          }
-        </script>
+    <script type="text/javascript">
+        img.init();
+        img.play(0);
+        //阻止事件冒泡
+        function estop(e){
+            var e=arguments.callee.caller.arguments[0]||event;
+            if (e || e.stopPropagation){
+                //因此它支持W3C的stopPropagation()方法
+                e.stopPropagation();
+            }else{
+                //否则，我们需要使用IE的方式来取消事件冒泡
+                window.event.cancelBubble = true;
+                return false;
+            }
+        }
+    </script>
 
 
       </div>
@@ -206,12 +216,12 @@ body, button, input, select, textarea {
       <div class="bottomcontent">
         <div class="bottomleft">
           <ul>
-<li><a href="../../proview.html">财务软件解决方案</a></li>
-<li><a href="../../proview.html">员工管理软件解决方案</a></li>
-<li><a href="../../proview.html">房地产行业管理方案</a></li>
-<li><a href="../../proview.html">互联网方案</a></li>
-<li><a href="../../proview.html">安全加密方案</a></li>
-<li><a href="../../proview.html">特殊行业解决方案</a></li>
+<li><a href="${pageContext.request.contextPath}/proview">财务软件解决方案</a></li>
+<li><a href="${pageContext.request.contextPath}/proview">员工管理软件解决方案</a></li>
+<li><a href="${pageContext.request.contextPath}/proview">房地产行业管理方案</a></li>
+<li><a href="${pageContext.request.contextPath}/proview">互联网方案</a></li>
+<li><a href="${pageContext.request.contextPath}/proview">安全加密方案</a></li>
+<li><a href="${pageContext.request.contextPath}/proview">特殊行业解决方案</a></li>
           </ul>
 
           <div id="prosearch">
@@ -244,9 +254,13 @@ body, button, input, select, textarea {
           <div class="clear"></div>
         </div>
         <div class="bottomright">
-          <h2>简介</h2>
-          <div><a href="javascript:void()">十年专业咨询顾问和大数据服务经验，是中国行业发展数据，信息及分析的领导服务企业，致力于为企业提供一站式数据信息服务平台。 通过“专业的，深入的，及时的，精准的，权威的”数据信息，为企业提供综合数据信息内容服务。 </a>
-          </div>
+          <h2>视频</h2>
+            <div style="text-align: center;margin-top: 10px;">
+                <video width="225px" height=125px" style="background:#000;" controls="controls">
+                    <source src="http://www.51taorui.com/video/aa.mp4" type="video/mp4">
+                    您的浏览器不支持此种视频格式。
+                </video>
+            </div>
           <a href="" class="learnmore">查看更多</a>  <br/><br/>
             <wb:follow-button uid="" type="red_3" width="100%" height="24" ></wb:follow-button>
           <div><a href='#' onclick='openwin()'><img src="../../images/weixin1.png" style='margin-left:38px'/></a><a href=''>&nbsp;&nbsp;&nbsp;微信公众号</a></div>
@@ -257,37 +271,6 @@ body, button, input, select, textarea {
     </div>
 
 <!--底部-->
- <div id="footer">
-      <div class="footercontent">
-        <div class="share">
-          <span class="follow"><a href="" class="sharetwitter"></a>
-            <a href=""  class="sharefacebook"></a></span> <a href="#" class="top"></a>
-        </div>
-
-        <div class="clear"></div>
-      </div>
-<div style="width:100%;height:100%;background-color:#FF0042;text-align:center;padding:10px 0;">
-
-    <div id="hovera" style="width:50%;height:100%;background-color:#FF0042;text-align:left;margin:0 28%;padding:5px 0;">
-
-         <span style="color:#FFFFFF">Copyright © 2016 芜湖科技有限公司. All rights reserved</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <span style="color:#FFFFFF">电话：400-800-8800&nbsp;&nbsp;&nbsp;QQ：623362984&nbsp;&nbsp;&nbsp;Email：taotingkai_ohyeah@163.com</span><br/> <br/>
-
-        <span style="color:#FFFFFF">友情链接:</span><a href="http://www.baidu.com" style="color:#FFFFFF" target="_blank">  百度  |</a>
-        <a href="http://www.sina.com.cn/" style="color:#FFFFFF" target="_blank">新浪  |</a>
-        <a href="http://www.qq.com/" style="color:#FFFFFF" target="_blank">腾讯  |</a>
-        <a href="http://www.youku.com/" style="color:#FFFFFF" target="_blank">优酷  |</a>
-        <a href="http://www.zhihu.com/" style="color:#FFFFFF" target="_blank">知乎  |</a>
-        <a href="http://www.baihe.com/" style="color:#FFFFFF" target="_blank">百合网</a>
-</div>
-    </div>
-
-</div>
-
-
-
- </div>
-     </div>
+<%@include file="foot.jsp"%>
 </body>
 </html>

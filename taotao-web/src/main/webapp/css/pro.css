@@ -51,7 +51,7 @@
 	background: url("../images/newsmore.png") right center no-repeat;
 	padding-right: 14px;
 	font: 11px/11px Calibri;
-	color: #003781;
+	color: #ff0042;
 	text-decoration: none
 }
 .proleft ul.prolist li a.more:hover {
@@ -370,7 +370,7 @@ a.sidemore:hover {
 	border-top: 0px #ebebeb solid
 }
 .contentbody-l ul.firstmenu li.currentlia ul.secondmenu li {
-	color: #003781;
+	color: #ff0042;
 	font: bold 12px/1.2em Calibri;
 	padding-left: 0px; 
 	border-top: 0px #fff solid;
@@ -379,7 +379,7 @@ a.sidemore:hover {
 	padding: 8px 0px;
 }
 .contentbody-l ul.firstmenu li.currentlia ul.secondmenu li:hover {
-	color: #003781;
+	color: #ff0042;
 	font: 12px/1.2em Calibri;
 	padding-left: 0px;
 	border-top: 0px #fff solid;
@@ -407,7 +407,7 @@ a.sidemore:hover {
 }
 .contentbody-l ul.firstmenu li.currentlia ul.secondmenu li a {
 	border: 0px;
-	color: #003781;
+	color: #ff0042;
 	text-decoration: none;
 	background: none
 }
@@ -453,7 +453,7 @@ a.sidemore:hover {
 	font: bold 24px/18px Calibri;
 	margin: 0px;
 	padding: 0px;
-	color: #db5d00;
+	color: #ff0042;
 	padding-bottom: 6px;
 }
 .text {
@@ -463,7 +463,7 @@ a.sidemore:hover {
 	border-bottom: 1px #999999 dashed
 }
 .choosetip {
-	color: #114491;
+	color: #ff0042;
 	font: bold 12px/1.5em Calibri;
 	padding-top: 12px;
 }
@@ -662,7 +662,7 @@ outline: none;}
 #tags LI.selectTag A {
 	LINE-HEIGHT: 36px;
 	height: 36px;
-	color: #e37006;
+	color: #ff0042;
 	background: url("../images/tabOn_right.gif") repeat-x;
 	border-left: 1px #e4e7e8 solid;
 	border-right: 1px #e4e7e8 solid;
@@ -682,6 +682,7 @@ outline: none;}
 	padding: 25px;
 	display: none;
 	BACKGROUND: url("images/bg.gif") repeat-x;
+	font-size: 11px;
 	COLOR: #474747;
 }
 .tagContent ul {
@@ -728,7 +729,7 @@ div#maincontent table.dataintable ul, div#maincontent table.dataintable li {
 	padding: 0;
 }
 table.dataintable td em {
-	color: #0000ff;
+	color: #ff0042;
 	font-weight: normal;
 }
 table.dataintable .table_value {
@@ -786,7 +787,7 @@ div#maincontent table.dataintable ul.listintable li {
 }
 .proservice strong {
 	font: bold italic 16px Calibri;
-	color: #093079;
+	color: #ff0042;
 }
 .proservice p {
 	font: 12px/1.5em Calibri;
@@ -833,7 +834,7 @@ div#maincontent table.dataintable ul.listintable li {
 	margin-left: 0px;
 }
 .service-text strong {
-	color: #1a3c83;
+	color: #ff0042;
 	font: bold italic 14px/30px Arial;
 }
 .service-contact {
@@ -1082,7 +1083,7 @@ div#maincontent table.dataintable ul.listintable li {
 	padding: 9px 0px;
 }
 .tabcontent ul.solutions2 li div strong a {
-	color: #003781;
+	color: #ff0042;
 	font: bold 14px/32px Calibri;
 }
 .tabcontent ul.solutions2 li div strong a:hover {
@@ -1097,7 +1098,7 @@ div#maincontent table.dataintable ul.listintable li {
 }
 .tabcontent ul.solutions2 li div a.more {
 	font: 12px/20px Calibri;
-	color: #003985;
+	color: #ff0042;
 	background: url("../images/submenuli.png") 70px center no-repeat;
 	display: block;
 	margin: 5px 0px;
@@ -1208,7 +1209,7 @@ div#maincontent table.dataintable ul.listintable li {
 	background: url("../images/newsmore.png") right center no-repeat;
 	padding-right: 14px;
 	font: bold 11px/11px Calibri;
-	color: #003781;
+	color: #ff0042;
 	text-decoration: none
 }
 .tabcontentpro ul.prolist li a.more:hover {
@@ -1248,7 +1249,7 @@ div#maincontent table.dataintable ul.listintable li {
 	overflow: hidden
 }
 .solutionul li div strong a {
-	color: #003985;
+	color: #ff0042;
 	font: bold 14px/32px Calibri;
 	display: block;
 }
@@ -1259,7 +1260,7 @@ div#maincontent table.dataintable ul.listintable li {
 }
 .solutiontitle {
 	font: bold 14px/51px Calibri;
-	color: #003781;
+	color: #ff0042;
 	border-bottom: 1px #bbbbbb dashed;
 	border-top: 1px #FFF dashed;
 	padding-left: 19px;
@@ -1271,7 +1272,7 @@ div#maincontent table.dataintable ul.listintable li {
 }
 .solutiontitle a {
 	font: bold 14px/51px Calibri;
-	color: #003781;
+	color: #ff0042;
 	display: block
 }
 .solutiontitle a:hover {
@@ -1304,7 +1305,7 @@ div#maincontent table.dataintable ul.listintable li {
 	padding: 5px 0px 10px 0px;
 }
 .solutionchoosetip {
-	color: #114491;
+	color: #ff0042;
 	font: bold 12px/1.5em Calibri;
 	padding-top: 12px;
 }
@@ -1394,7 +1395,7 @@ div#maincontent table.dataintable ul.listintable li {
 }
 p.formtitle {
 	font: bold 14px/30px Calibri;
-	color: #093079;
+	color: #ff0042;
 	padding: 10px;
 	padding-bottom: 0px;
 	border: 0px;
@@ -1406,7 +1407,7 @@ p.formtitle {
 }
 .quotation p.text span.bluefont {
 	font: bold 12px Calibri;
-	color: #093079;
+	color: #ff0042;
 }
 .quotation form div {
 	padding: 5px 0px;
@@ -1447,7 +1448,7 @@ p.formtitle {
 .quotation form input[type='submit'] {
 	height: 26px;
 	width: 112px;
-	color: #3b73b9;
+	color: #ff0042;
 	display: block;
 	overflow: hidden;
 	text-indent: -9999px;
@@ -1459,7 +1460,7 @@ p.formtitle {
 .quotation form input[type='submit']:hover {
 	height: 26px;
 	width: 112px;
-	color: #3b73b9;
+	color: #ff0042;
 	display: block;
 	overflow: hidden;
 	text-indent: -9999px;
@@ -1467,7 +1468,7 @@ p.formtitle {
 	cursor: pointer
 }
 .bluefont {
-color::#318be4
+color::#ff0042
 }
 .chatlive {
 	line-height: 24px;
@@ -1546,7 +1547,7 @@ p.flsttext {
 }
 .construction01 dl dt {
 	font: bold 14px/32px Calibri;
-	color: #003789;
+	color: #ff0042;
 }
 .construction01 dl dd a {
 	background: url("../images/orgicon.png") left center no-repeat;
@@ -1573,7 +1574,7 @@ p.flsttext {
 }
 .construction012 dl dt {
 	font: bold 14px/32px Calibri;
-	color: #003789;
+	color: #ff0042;
 }
 .construction012 dl dd {
 	display: inline;
@@ -1605,7 +1606,7 @@ p.flsttext {
 }
 .construction02 dl dt {
 	font: bold 14px/32px Calibri;
-	color: #003789;
+	color: #ff0042;
 }
 .construction02 dl dd {
 	display: inline;
@@ -1642,7 +1643,7 @@ p.flsttext {
 }
 .construction03 dl dt, .construction031 dl dt, .construction032 dl dt {
 	font: bold 14px/32px Calibri;
-	color: #003789;
+	color: #ff0042;
 }
 .construction03 dl dd a, .construction031 dl dd a, .construction032 dl dd a {
 	background: url("../images/orgicon.png") left center no-repeat;
@@ -1667,7 +1668,7 @@ p.flsttext {
 }
 .construction04 dl dt {
 	font: bold 14px/32px Calibri;
-	color: #003789;
+	color: #ff0042;
 }
 .construction04 dl dd {
 	font: 12px Calibri;
@@ -1823,7 +1824,7 @@ p.flsttext {
 }
 p.address-head a {
 	font: bold 14px Calibri;
-	color: #003781;
+	color: #ff0042;
 	text-decoration: none
 }
 p.address-head a:hover {
@@ -1934,7 +1935,7 @@ p.address-head a:hover {
 }
 #project-body #project-content .projectbodyleft .projectbodyleft-nr-child ul li a {
 	padding-left: 10px;
-	color: #1a3c83;
+	color: #ff0042;
 }
 #project-body #project-content .projectbodyleft .projectbodyleft-nr-child ul li a:hover {
 	color: #e37006;
@@ -2011,7 +2012,7 @@ p.address-head a:hover {
 	margin-left: 0px;
 }
 #project-body #project-content .projectbodyright .projectbodyright-service .service-text strong {
-	color: #1a3c83;
+	color: #ff0042;
 	font-style: italic;
 	font-size: 14px;
 	line-height: 30px;
@@ -2029,7 +2030,7 @@ p.address-head a:hover {
 /*project page css end*/
 
 
-/*产品部分四张图切换效�?/
+/*产品部分四张图切换效�?/
 .tabbed_images {
 	list-style: none;
 	margin: 0;
@@ -2151,7 +2152,7 @@ p.address-head a:hover {
 }
 .exhibitioncontent p strong {
 	font: bold 12px/18px Calibri;
-	color: #043297;
+	color: #ff0042;
 }
 .exhibitioncontent p.exhibitioncontact {
 	font: 12px/18px Calibri;
@@ -2165,7 +2166,7 @@ p.address-head a:hover {
 }
 .exhibitioncontent p.note strong {
 	font: bold 12px/18px Calibri;
-	color: #1270af;
+	color: #ff0042;
 }
 .exhibitioncontent a.download {
 	font: bold 12px/28px Calibri;

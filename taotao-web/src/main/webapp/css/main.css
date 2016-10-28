@@ -1,11 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-	margin: 0 auto;
+	margin: 0px -18px 0px 0px;
 	padding: 0px;
 	background: #fafafa;
 	font: 12px/1.5em Calibri;
 	border-top: 4px #FF0042 solid;
+	overflow-x: hidden; overflow-y: auto;
+
+
 }
 .clear {
 	clear: both;
@@ -13,15 +16,15 @@ body {
 	font-size: 0px;
 }
 img.noborder {
-	border: 0px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	float: left;
-}
+	 border: 0px;
+	 margin-right: 10px;
+	 margin-bottom: 10px;
+	 float: left;
+ }
 #head {
 	border: 0px;
 	margin: 20px;
-	
+
 	/*background: url("../images/logobg.png");*/
 }
 .headcontent {
@@ -30,7 +33,7 @@ img.noborder {
 	padding: 22px 0px 0px 0px;
 }
 .headcontent h1 {
-	background: url("http://s16.mogucdn.com/p1/160411/upload_ie4denjsgzrdqyleg4zdambqgiyde_207x51.png") left center no-repeat;
+	background: url("../images/mjj.png") left center no-repeat;
 	text-indent: -9999px;
 	cursor: pointer;
 	width: 280px;

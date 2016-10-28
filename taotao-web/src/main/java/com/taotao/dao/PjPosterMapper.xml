@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.dao.PjPosterMapper">
+
+    <!--查询所有的广告-->
+    <select id="selectAllPoster" parameterType="java.lang.Integer" resultType="com.taotao.model.PjPoster">
+        SELECT *
+        from pj_poster
+        WHERE category_id = 14 order by poster_sort
+    </select>
+
+
+
+</mapper>

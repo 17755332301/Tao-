@@ -5,14 +5,16 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>蓝色软件企业网站</title>
-<link href="css/reset.css" rel="stylesheet" type="text/css" />
-<link href="css/main.css" rel="stylesheet" type="text/css" />
-<link href="css/sub.css" rel="stylesheet" type="text/css" />
-<link href="css/pro.css" rel="stylesheet" type="text/css" />
+<title>蘑街街网</title>
+<link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/sub.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/pro.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/111.ico">
     <!--导航特效-->
-    <script type="text/javascript" src="js/jquery-1.js" ></script>
-    <script type="text/javascript" src="js/smartmenu-min.js" ></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.js" ></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/smartmenu-min.js" ></script>
     <script type="text/javascript">
       jQuery(window).ready(function(){
       jQuery("#navigation").Smartmenu({animationDuration: 350});
@@ -108,6 +110,7 @@ pageEncoding="UTF-8"%>
       background: url("../images/submenulihover.png") left center no-repeat;
       padding-left: 9px;
       }
+      #hovera a:hover{text-decoration:none;padding-left:5px;}
     </style>
     
     <!--related pro scroll js-->
@@ -169,7 +172,7 @@ pageEncoding="UTF-8"%>
 <body>
 <div id="head">
       <div class="headcontent">
-        <div id="sbmlogo"><a href=""><h1>XXXX科技有限公司</h1></a></div>
+        <div id="sbmlogo"><a href="http://www.51taorui.com"><h1>XXXX科技有限公司</h1></a></div>
         <div class="topright">
           <div id="logoright">
             <!--popwindow end-->
@@ -189,8 +192,8 @@ pageEncoding="UTF-8"%>
           <div class="clear"></div>
           <div id="navigation" class="smartmenu">
             <ul>
-              <li><a href="index.html" class="current">首页</a></li> 
-              <li id=""><a href="prolist.html">产品中心</a>
+              <li><a href="http://www.51taorui.com" class="current">首页</a></li>
+              <li><a href="${pageContext.request.contextPath}/prolist">产品中心</a>
                 <ul>
                     <li><a href="#">ERP软件</a></li>  
                     <li><a href="#">财务软件</a>
@@ -198,32 +201,32 @@ pageEncoding="UTF-8"%>
                     <li><a href="#">服务器</a></li>  
                 </ul>
               </li>   
-              <li id="">
-                <a href="prolist.html">解决方案</a>
+              <li>
+                <a href="${pageContext.request.contextPath}/prolist">解决方案</a>
                 <ul>
                   <li><a href="#">技术解决方案</a></li>
                   <li><a href="#">行业解决方案</a></li>
                   <li><a href="#">成功案例</a></li>                             
                 </ul>
               </li>                
-              <li id=""><a href="list.html">新闻中心</a>
+              <li><a href="${pageContext.request.contextPath}/list">新闻中心</a>
                 <ul>
                   <li><a href="#">公司动态</a></li><li><a href="#">行业资讯</a></li>  
                 </ul>
               </li> 
-              <li id=""><a href="download.html">服务支持</a>
+              <li><a href="${pageContext.request.contextPath}/download">服务支持</a>
                 <ul>
                <li><a href="#">资料文档</a></li>
                <li><a href="#">软件更新</a></li> 
                 </ul>
               </li>   
-          <li id=""> <a href="about.html">合作伙伴</a>
+          <li> <a href="${pageContext.request.contextPath}/about">合作伙伴</a>
 
       <ul>
                   <li><a href="#">渠道战略</a></li><li><a href="#">合作加盟</a></li>  
                 </ul>
       </li>
-    <li id=""><a href="about.html">关于我们</a>
+    <li><a href="${pageContext.request.contextPath}/about">关于我们</a>
                  <ul>
                   <li><a href="#">公司介绍</a></li>
                   <li><a href="#">联系我们</a></li>
@@ -240,7 +243,7 @@ pageEncoding="UTF-8"%>
  
    <div class="prodetailsbody">
    <div class="location2">
-      <a href="/">首页</a> > <a href="prolist.aspx?id=76">产品中心</a> > 
+      <a href="http://www.51taorui.com">首页</a> > <a href="prolist.aspx?id=76">产品中心</a> >
       <a href="">财务软件</a> > 用友软件
 
    
@@ -254,7 +257,7 @@ pageEncoding="UTF-8"%>
               <li class="currentlia"><a href="javascript:void()">网络安全防护</a>           
                 <ul class="secondmenu">
                  <li class="last"><a href="">分类一</a></li>
-                 <li class="last"><a href="">分类一</a></li>
+                 <li class="last"><a href="">分类二</a></li>
                 </ul>
               </li>
               
@@ -325,7 +328,7 @@ pageEncoding="UTF-8"%>
                   <LI><A onClick="selectTag('tagContent2',this)" href="javascript:void(0)">产品优势</A> </LI>
                 </UL>
                 <DIV id=tagContent>
-                  <DIV class="tagContent selectTag" id="tagContent0">
+                  <DIV class="tagContent selectTag" id="tagContent0"  style="font-size:6px;@import;">
                    薛之谦凭借“段子手”功力，刷爆娱乐圈，然而作为一个创作型歌手，他显然不是那么幸运。最近，薛之谦又曝新段子，“我做谐星赚的钱是做歌手的10倍”，他发现仅靠唱歌这条路已经走不通了，目前其最主要的任务就是当谐星，负责逗别人笑。
                     <div class="clear"></div>
                   </DIV>
@@ -369,7 +372,7 @@ pageEncoding="UTF-8"%>
                         </SCRIPT> 
               
               <!--tab end-->
-              <div class="proservice"> 
+              <div class="proservice">
                 <div class="service-text" style="display:none">文档
                   <p>凤凰卫士反泄密软件是文档守望者反泄密的扩展和延伸，在文档守望者反泄密软件透明加密、U盘管控、打印控制、程序控制、日志审计、自动备份、外发文件控制等基础功能上，融入了文件的权限管理，使其既能防止文件向外泄密，又能对内部的文件管理做很好的支撑，实现反泄密与内部管理的无缝结合。系统采用PKI体系，能够实现各种复杂而灵活的应用，满足大中型企事业单位的需要。.</p>
                   <span class="download"><a href="../pdf/crusher/jaw_crusher.pdf">下载</a></span> 
@@ -407,29 +410,10 @@ pageEncoding="UTF-8"%>
         </div>
       </div>
     </div>
-    
-      <div id="footer" class="subfooter" style="top:150px; background:url(images/subfooterbg.png) bottom center repeat-x;">
-                     <div class="footercontent">
-        <div class="share">
-          <span class="follow"><a href="" class="sharetwitter"></a>
-            <a href=""  class="sharefacebook"></a></span> <a href="#" class="top"></a>
-        </div>
-        <div class="links">Copyright © 2016 XXX科技有限公司. All rights reserved</div>
-        <div class="contacts">
-          <ul>
-            <li class="tel">400-800-8800</li>
-            <li class="fax">025-8888888</li>
-            <li class="email"><a href="">123456@123.com</a></li>
-          </ul>
-        </div>
-        <div class="clear"></div>
-      </div>
-           <div style="width:100%;height:100%;;background-color:#07132d"">
-     <div style="width:960px;height:90px;margin:0 auto;background-color:#07132d;color:#41638d">
-</div>           </div>
-
-
-</div>
+    <!--底部-->
+    <div style="font-size: 14px;">
+        <%@include file="foot.jsp"%>
+    </div>
  
 </body>
 </html>

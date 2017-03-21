@@ -143,7 +143,7 @@ body, button, input, select, textarea {
               </li>
               <li><a href="${pageContext.request.contextPath}/download">服务支持</a>
                 <ul>
-               <li><a href="#">资料文档</a></li>
+               <li><a href="http://www.51taorui.com/doc/Ajax.docx">资料文档</a></li>
                <li><a href="#">软件更新</a></li>
                 </ul>
               </li>

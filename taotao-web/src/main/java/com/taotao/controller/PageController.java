@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -32,8 +33,28 @@ public class PageController {
      * @return
      */
     @RequestMapping("/")
-    public String skipIndex(Model model){
+    public String skipIndex(HttpServletRequest request ,Model model){
 
+        //获取请求的ip
+        String ip = request.getHeader("x-forwarded-for");
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("HTTP_CLIENT_IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("HTTP_X_FORWARDED_FOR");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        log.info("-------------------------------------请求的ip----------------------------------------------------------");
+        System.out.println(ip);
+        log.info("-------------------------------------请求的ip----------------------------------------------------------");
         List<PjPoster> pjPosters = indexService.selectAllPoster();
         model.addAttribute("pjPoster",pjPosters);
         return "index";
@@ -89,4 +110,5 @@ public class PageController {
     public String skipAbout(Model model){
         return "about";
     }
+
 }
